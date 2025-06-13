@@ -1,0 +1,11 @@
+first name,last name,plat_nomor,email,role,password,lokasi_parkir,waktu_mulai,waktu_selesai
+d,d,b 12 aa,@,Pengguna,d,0,,
+a,a,b 12 ab,a@,Admin,a,0,,
+a,b,b 12 ac,a@s,Admin,123,0,,
+Azaria,Syahla,b 12 ad,azaria@gmail.com,Pengguna,a,41,2023-Jun-03 9:49:43,2023-Jun-03 15:23:52
+azaria,syahla,b 12 ae,azariaa@gmail.com,Admin,a,0,,
+p,o,b 12 af,i@u,Pengguna,123,1,2023-Jun-09 11:01:59,2023-Jun-10 11:22:59
+qwe,ert,b 12 ag,q@w,Pengguna,123,0,,
+v,v,b 12 ah,v@,Pengguna,v,0,,
+valen,tino,b 12 ai,val@,Pengguna,v,2,2023-Jun-09 10:33:46,2023-Jun-10 11:37:32
+waw,uuu,b 12 aj,waw@utr,Admin,123,0,,
