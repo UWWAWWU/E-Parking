@@ -26,9 +26,9 @@ The browser version adapts the original desktop interface for web use. Backgroun
 
 | Feature | Workflow |
 | --- | --- |
-| Create account | Enter first name, last name, license plate, email, role, and password. |
+| Create account | Enter first name, last name, email, role, and password. |
 | Log in | Access the user or admin interface with your account details. |
-| Start parking | Select a vacant yellow slot and confirm with **Done**. |
+| Start parking | Enter a license plate, select a vacant yellow slot, and confirm with **Done**. |
 | Floor selection | Explore 20 spaces on each floor, from A1 to L5. |
 | Nearest available spaces | See the first two available spaces in the original slot order. |
 | Find my car | Locate the user's parked vehicle, highlighted in green. |
@@ -39,12 +39,12 @@ The browser version adapts the original desktop interface for web use. Backgroun
 
 1. Open **[E-Parking](https://eparking-wawutriambodo.vercel.app)**.
 2. Create an account with example details and the **Pengguna** role.
-3. Log in with the same email, password, and plate.
-4. Click **Start Parking**, select a yellow space, then click **Done**.
+3. Log in with the same email and password.
+4. Click **Start Parking**, enter a license plate, select a yellow space, then click **Done**.
 5. Use **Find my car** to see your vehicle's location.
 6. Open **Transaction** and click **Done** to finish the simulated payment.
 
-To explore the admin workflow, log out using the top-right account icon, create an **Admin** account with another plate, and search the user's plate on the admin Home screen.
+To explore the admin workflow, open the top-right profile menu and log out, create an **Admin** account with another plate, and search the user's plate on the admin Home screen.
 
 ### Parking fee
 
@@ -57,6 +57,8 @@ Fee = Rp20,000 + Rp5,000 × completed hours
 ### Browser demo
 
 Accounts, parking sessions, and simulated transactions are stored locally in the browser. Visitors do not share records, and accounts do not sync across devices. Passwords are stored as salted PBKDF2 hashes. Admin selection is part of the original demo workflow, not a production access-control system. No real payment is collected. Use example account details and a password you do not use elsewhere.
+
+The Account panel displays your full name and shows the vehicle plate only during an active session. The profile menu supports a local profile photo, Indonesian / English interface selection, and logout. Notifications are displayed inside the application.
 
 ## Original GUI assets
 
