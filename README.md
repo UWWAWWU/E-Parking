@@ -2,99 +2,129 @@
 
 # 🅿️ E-Parking
 
-### Find vacant space, then park up wherever
+### Find your space. Park with ease.
 
-A parking management application built with Python and Tkinter, now available in the browser using the **original GUI design and image assets**.
+A parking management demo for **web and Python / Tkinter**, with a refreshed purple-and-yellow interface, three parking floors, and dedicated user and admin workflows.
 
 [![Open E-Parking](https://img.shields.io/badge/OPEN_E--PARKING-ffc800?style=for-the-badge&logo=vercel&logoColor=black)](https://eparking-wawutriambodo.vercel.app)
-[![Python](https://img.shields.io/badge/Python-Tkinter-3776ab?logo=python&logoColor=white)](E-Parking.ipynb)
+[![Python](https://img.shields.io/badge/Desktop-Python_%2F_Tkinter-3776ab?logo=python&logoColor=white)](e_parking.py)
 [![Web](https://img.shields.io/badge/Web-HTML_CSS_JavaScript-f7df1e?logo=javascript&logoColor=black)](web/)
 
-![Original E-Parking dashboard](Gambar/dashboard.jpg)
+![Current admin overview design](docs/home-admin.png)
 
-**3 floors · 60 spaces · User and admin workflows**
+**3 floors · 60 spaces · English / Indonesian · PDF invoices**
 
 </div>
 
-## About the project
+## What it does
 
-E-Parking helps users choose a parking space, locate their vehicle, and calculate parking fees. The original desktop application uses Tkinter for its GUI, Pillow for image assets, and pandas for CSV records. Bubble sort and binary search support account lookup in the Python implementation.
+E-Parking lets drivers choose an available parking space, enter their vehicle's license plate, find their parked car, and review a simulated parking payment. Admins get a parking overview, can inspect occupied spaces, and look up a vehicle's transaction by its plate.
 
-The browser version adapts the original desktop interface for web use. Backgrounds, banners, navigation artwork, and action buttons come directly from the repository's **Gambar** folder. The original 1280 × 730 layout, purple and yellow palette, labels, slot positions, and page flows are retained. The interface fills the browser viewport and adapts the original layout to the screen size while preserving the original artwork.
+Both interfaces follow the same visual concept: purple panels, yellow navigation and available spaces, high-resolution banners, and crisp native text. The Tkinter application now lives in a standalone Python module; the notebook launches that same current application.
 
-## Features
+## User experience
 
-| Feature | Workflow |
+- **Create an account:** first and last name, email, role, password, and password confirmation. Login and signup are in English, with password visibility controls.
+- **Start Parking:** select a yellow space, click **Done**, enter the license plate in the centered form, and confirm. Each of the three floors has 20 spaces.
+- **Find My Car:** locate the active vehicle, highlighted in green.
+- **Transaction:** review **License Plate**, **Parking Duration**, and **Total Payment**, then complete the simulated payment.
+- **Invoice:** view the receipt and download a compact, single-page PDF. Completing a transaction releases the space and removes the plate from the active account panel.
+- **Profile:** upload or change a photo, choose English / Indonesian, or log out. Clicking outside closes the profile menu.
+- **Notifications:** feedback appears inside the application for three seconds.
+
+![Current user Home design](Gambar/dashboard.jpg)
+
+## Admin experience
+
+| Screen | What admins can do |
 | --- | --- |
-| Create account | Enter first name, last name, email, role, and password. |
-| Log in | Access the user or admin interface with your account details. |
-| Start parking | Enter a license plate, select a vacant yellow slot, and confirm with **Done**. |
-| Floor selection | Explore 20 spaces on each floor, from A1 to L5. |
-| Nearest available spaces | See the first two available spaces in the original slot order. |
-| Find my car | Locate the user's parked vehicle, highlighted in green. |
-| Admin lookup | Search a user's plate from Home, then locate the vehicle or complete its transaction. |
-| Transaction | Review the parking duration and fee, then finish with **Done**. |
+| Home | See cars currently parked, available spaces, today's completed transactions, and today's revenue. |
+| Floor availability | Review occupied and available counts on each floor. |
+| Recent transactions | See the latest completed payments with plate, exit time, and amount. |
+| Find Car | Switch floors and click an occupied space, such as **E2**, to see the driver's name, email, and plate. |
+| Transaction | Enter a plate and click **Search**. The billing details stay hidden until a matching active vehicle is found. |
 
-## Try the web version
+The admin Home uses the sidebar for navigation, with no duplicate quick-access buttons. Transaction labels follow the selected language in both user and admin modes.
 
-1. Open **[E-Parking](https://eparking-wawutriambodo.vercel.app)**.
-2. Create an account with example details and the **Pengguna** role.
-3. Log in with the same email and password.
-4. Click **Start Parking**, enter a license plate, select a yellow space, then click **Done**.
-5. Use **Find my car** to see your vehicle's location.
-6. Open **Transaction** and click **Done** to finish the simulated payment.
+## Three-floor parking map
 
-To explore the admin workflow, open the top-right profile menu and log out, create an **Admin** account with another plate, and search the user's plate on the admin Home screen.
+Spaces run from **A1 to L5**. Floor buttons are labeled **1**, **2**, and **3**, with an active state. Floor 1 has a green entrance and a red exit. Connections between floors use white floor markers; floor 3 leaves the right-hand exit area empty.
 
-### Parking fee
+![Current parking map design](Gambar/start%20park%20bg.jpg)
 
-The web version follows the original application's formula:
+## Payments and invoices
+
+The demonstration uses the original tariff:
 
 ```text
 Fee = Rp20,000 + Rp5,000 × completed hours
 ```
 
-### Browser demo
+No real money is collected. A completed transaction creates a receipt, releases the parking space, and updates the admin overview.
 
-Accounts, parking sessions, and simulated transactions are stored locally in the browser. Visitors do not share records, and accounts do not sync across devices. Passwords are stored as salted PBKDF2 hashes. Admin selection is part of the original demo workflow, not a production access-control system. No real payment is collected. Use example account details and a password you do not use elsewhere.
+![Current transaction design](Gambar/transaksi%20page.jpg)
 
-The Account panel displays your full name and shows the vehicle plate only during an active session. The profile menu supports a local profile photo, Indonesian / English interface selection, and logout. Notifications are displayed inside the application.
+## Data and demo scope
 
-## Original GUI assets
+The web app keeps accounts, parking sessions, photos, and receipts in that browser's local storage. The desktop app saves records locally in `~/.e-parking/records.json`, with profile photos alongside the records. Passwords use salted PBKDF2 hashes in both applications.
 
-| Screen | Original design |
-| --- | --- |
-| Registration and login | `Gambar/Bg dasar.jpg` |
-| Home | `Gambar/dashboard.jpg` |
-| Parking map | `Gambar/start park bg.jpg`, floor 2 and 3 variants |
-| Vehicle location | `Gambar/find my car.jpg`, floor 2 and 3 variants |
-| Transaction | `Gambar/transaksi page.jpg` |
+Web and desktop records are independent; they do not sync between devices or with each other. Role selection is part of this demonstration rather than production access control. Use sample details and a password you do not use elsewhere.
 
-![Original parking design](Gambar/start%20park%20bg.jpg)
+The original `E-Parking.csv` is preserved as a historical desktop dataset. It is not automatically loaded into the refreshed application.
+
+## Current design assets
+
+The old full-screen artwork in **Gambar/** has been replaced with refreshed reference layouts. Buttons and navigation assets have also been recreated. New high-resolution banner backgrounds live in `Gambar/assets/` and are used by Tkinter. Maps, account panels, tables, and controls are drawn as native elements so text stays sharp.
+
+The images shown in this README are **rendered design references with illustrative demo values**, not runtime screenshots or live parking records. They can be regenerated with `python docs/render_designs.py`. Native widget appearance can vary by operating system.
 
 ## Project structure
 
 ```text
-E-Parking.ipynb       Original Python / Tkinter implementation
-E-Parking.csv        Original desktop dataset
-Gambar/              Original GUI backgrounds and buttons
-web/                 Browser adaptation of the original GUI
-  index.html         Web entry point
-  style.css          Original canvas layout and scaling
-  app.js             Account, navigation, and parking interactions
-  logic.js           Slot labels and fee calculation
-tests/               Parking rule tests
-vercel.json          Web hosting configuration
+e_parking.py          Current Tkinter interface and compact PDF invoices
+parking_core.py       Desktop accounts, booking, lookup, fees, and records
+E-Parking.ipynb       Notebook launcher for the current desktop app
+E-Parking.csv         Preserved historical dataset
+requirements.txt     Desktop dependencies
+Gambar/              Refreshed layout references, buttons, and HD assets
+docs/                Current design references and their renderer
+web/                 Browser application
+  app.js             User/admin flows, dashboard, profile, and transactions
+  style.css          Interface layout and styling
+  logic.js           Parking rules and tariff
+  invoice-pdf.js     Compact web invoice generation
+tests/               Web and desktop parking regression tests
 ```
 
 ## Run locally
 
+### Desktop
+
+With Python 3.10 or newer and Tkinter installed:
+
 ```bash
-python3 -m http.server 3000 --directory web
+python -m pip install -r requirements.txt
+python e_parking.py
 ```
 
-Open `http://localhost:3000`. To run the parking rule tests with Node.js 20 or newer, use `npm test`.
+Alternatively, open `E-Parking.ipynb` from the project folder and run its launcher cell. On Linux, Tkinter may require the distribution's `python3-tk` package. The app needs a graphical display. Desktop records can be redirected with the `EPARKING_DATA_PATH` environment variable.
+
+### Web
+
+```bash
+python -m http.server 3000 --directory web
+```
+
+Open `http://localhost:3000`, register a **User** or **Admin** demo account, and log in.
+
+### Tests
+
+```bash
+npm test
+python -m unittest discover -s tests -p 'test_desktop.py' -v
+```
 
 ---
 
 Created by **[Wawu Tri Ambodo](https://wawutriambodo.my.id)**
+
