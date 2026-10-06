@@ -1,86 +1,98 @@
 <div align="center">
 
 # 🅿️ E-Parking
-### Park smart. Move easy.
 
-An interactive parking experience — choose a space, find your vehicle, and finish your parking session in a few clicks.
+### Find vacant space, then park up wherever
 
-[![Try the live demo](https://img.shields.io/badge/TRY_THE_LIVE_DEMO-126f58?style=for-the-badge&logo=vercel&logoColor=white)](https://eparking-wawutriambodo.vercel.app)
-[![JavaScript](https://img.shields.io/badge/JavaScript-ES_Modules-f7df1e?logo=javascript&logoColor=black)](web/)
-[![Original project](https://img.shields.io/badge/Original_Project-Python_%2B_Tkinter-3776ab?logo=python&logoColor=white)](E-Parking.ipynb)
+A parking management application built with Python and Tkinter, now available in the browser using the **original GUI design and image assets**.
 
-**60 parking spaces · 3 floors · A complete parking simulation**
+[![Open E-Parking](https://img.shields.io/badge/OPEN_E--PARKING-ffc800?style=for-the-badge&logo=vercel&logoColor=black)](https://eparking-wawutriambodo.vercel.app)
+[![Python](https://img.shields.io/badge/Python-Tkinter-3776ab?logo=python&logoColor=white)](E-Parking.ipynb)
+[![Web](https://img.shields.io/badge/Web-HTML_CSS_JavaScript-f7df1e?logo=javascript&logoColor=black)](web/)
+
+![Original E-Parking dashboard](Gambar/dashboard.jpg)
+
+**3 floors · 60 spaces · User and admin workflows**
 
 </div>
 
-## The experience
+## About the project
 
-E-Parking brings a desktop parking management project to the browser. Visitors can explore a live parking map, start a session, locate a vehicle by its license plate, and complete a simulated transaction. The interface adapts to desktop and mobile screens and can be explored immediately without an account.
+E-Parking helps users choose a parking space, locate their vehicle, and calculate parking fees. The original desktop application uses Tkinter for its GUI, Pillow for image assets, and pandas for CSV records. Bubble sort and binary search support account lookup in the Python implementation.
 
-| Feature | What you can try |
+The browser version adapts the original desktop interface for web use. Backgrounds, banners, navigation artwork, and action buttons come directly from the repository's **Gambar** folder. The original 1280 × 730 layout, purple and yellow palette, labels, slot positions, and page flows are retained. The complete canvas scales to smaller screens without rearranging the desktop design.
+
+## Features
+
+| Feature | Workflow |
 | --- | --- |
-| Interactive parking map | Browse three floors, each with 20 spaces, from A1 through L5. |
-| Start parking | Choose an available space and enter a visitor name and license plate. |
-| Find a vehicle | Search a plate and see the floor, space, start time, and estimated fee. |
-| Parking transactions | Finish a session, generate a receipt, and make its space available again. |
-| Transaction history | Review completed sessions and export them as CSV. |
-| Admin demo | Inspect all active vehicles and simulate their checkout. |
-| Browser persistence | Keep sessions and history after a page refresh on the same browser. |
+| Create account | Enter first name, last name, license plate, email, role, and password. |
+| Log in | Access the user or admin interface with your account details. |
+| Start parking | Select a vacant yellow slot and confirm with **Done**. |
+| Floor selection | Explore 20 spaces on each floor, from A1 to L5. |
+| Nearest available spaces | See the first two available spaces in the original slot order. |
+| Find my car | Locate the user's parked vehicle, highlighted in green. |
+| Admin lookup | Search a user's plate from Home, then locate the vehicle or complete its transaction. |
+| Transaction | Review the parking duration and fee, then finish with **Done**. |
 
-## Try it in a minute
+## Try the web version
 
-1. Open the **[live demo](https://eparking-wawutriambodo.vercel.app)**.
-2. Select a green space and enter an example name and plate, such as `B 2026 XYZ`.
-3. Click **Mulai parkir**. Your selected space becomes occupied.
-4. Use **Temukan kendaraan** to search the plate.
-5. Click **Selesaikan parkir**, finish the simulation, and view the receipt in **Riwayat transaksi**.
+1. Open **[E-Parking](https://eparking-wawutriambodo.vercel.app)**.
+2. Create an account with example details and the **Pengguna** role.
+3. Log in with the same email, password, and plate.
+4. Click **Start Parking**, select a yellow space, then click **Done**.
+5. Use **Find my car** to see your vehicle's location.
+6. Open **Transaction** and click **Done** to finish the simulated payment.
 
-You can also search the preloaded example plate `B 1234 ABC`, switch to **Admin demo**, or use **Reset demo** to start again.
+To explore the admin workflow, log out using the top-right account icon, create an **Admin** account with another plate, and search the user's plate on the admin Home screen.
 
-### Pricing
+### Parking fee
 
-The web version preserves the desktop application's pricing formula:
+The web version follows the original application's formula:
 
 ```text
-Total = Rp20,000 + (Rp5,000 × completed hours)
+Fee = Rp20,000 + Rp5,000 × completed hours
 ```
 
-Examples: 45 minutes → Rp20,000; 1 hour 30 minutes → Rp25,000; 2 hours → Rp30,000.
+### Browser demo
 
-### Demo scope
+Accounts, parking sessions, and simulated transactions are stored locally in the browser. Visitors do not share records, and accounts do not sync across devices. Passwords are stored as salted PBKDF2 hashes. Admin selection is part of the original demo workflow, not a production access-control system. No real payment is collected. Use example account details and a password you do not use elsewhere.
 
-This is a public portfolio simulation. No real payment is collected. Data lives in your browser's local storage; it is not shared across visitors or devices. The role selector demonstrates an admin workflow and is not an authenticated account system. Use example visitor details rather than personal information.
+## Original GUI assets
 
-## From desktop to web
+| Screen | Original design |
+| --- | --- |
+| Registration and login | `Gambar/Bg dasar.jpg` |
+| Home | `Gambar/dashboard.jpg` |
+| Parking map | `Gambar/start park bg.jpg`, floor 2 and 3 variants |
+| Vehicle location | `Gambar/find my car.jpg`, floor 2 and 3 variants |
+| Transaction | `Gambar/transaksi page.jpg` |
 
-The original project was built with **Python, Tkinter, Pillow, and pandas**, using CSV records for account and parking data. It includes **bubble sort** and **binary search** in its account lookup flow.
+![Original parking design](Gambar/start%20park%20bg.jpg)
 
-The browser version carries over the parking workflow, three-floor layout, space labels, vehicle search, and pricing while introducing a responsive interface and an immediate demo experience. Its UI and state management use vanilla JavaScript with ES modules; no frontend framework or production dependencies are required.
+## Project structure
 
 ```text
-web/                 Browser application
-  index.html         Interface and page structure
-  style.css          Responsive styles
-  app.js             Interactions and browser storage
-  logic.js           Parking rules and pricing
-  favicon.svg        Application icon
-tests/               Parking lifecycle and pricing tests
-E-Parking.ipynb      Original desktop implementation
-E-Parking.csv        Original desktop dataset (not served by the web app)
-Gambar/              Original desktop interface assets
+E-Parking.ipynb       Original Python / Tkinter implementation
+E-Parking.csv        Original desktop dataset
+Gambar/              Original GUI backgrounds and buttons
+web/                 Browser adaptation of the original GUI
+  index.html         Web entry point
+  style.css          Original canvas layout and scaling
+  app.js             Account, navigation, and parking interactions
+  logic.js           Slot labels and fee calculation
+tests/               Parking rule tests
 vercel.json          Web hosting configuration
 ```
 
 ## Run locally
 
-With Python 3 installed:
-
 ```bash
 python3 -m http.server 3000 --directory web
 ```
 
-Open `http://localhost:3000`. With Node.js 20 or newer, verify the parking logic using `npm test`. No dependency installation is needed.
+Open `http://localhost:3000`. To run the parking rule tests with Node.js 20 or newer, use `npm test`.
 
 ---
 
-Created by **[Wawu Tri Ambodo](https://wawutriambodo.my.id)** · [Explore the source](https://github.com/UWWAWWU/E-Parking)
+Created by **[Wawu Tri Ambodo](https://wawutriambodo.my.id)**
