@@ -1,0 +1,5 @@
+node_modules/
+.vercel/
+.ipynb_checkpoints/
+__pycache__/
+.env*
