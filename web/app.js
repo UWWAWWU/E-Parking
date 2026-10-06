@@ -3,7 +3,7 @@ const stage=document.querySelector('#stage'),viewport=document.querySelector('#v
 try{const saved=JSON.parse(localStorage.getItem(key));if(saved?.version===1&&Array.isArray(saved.accounts)&&Array.isArray(saved.history))db=saved;const id=sessionStorage.getItem('e-parking-user');user=db.accounts.find(a=>a.id===id)||null;if(user)page='home';}catch{}
 const escape=v=>String(v??'').replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
 const asset=n=>'Gambar/'+encodeURIComponent(n);
-function fit(){const scale=Math.min(1,window.innerWidth/1280);viewport.style.width=1280*scale+'px';viewport.style.height=730*scale+'px';stage.style.transform=`scale(${scale})`;}
+function fit(){const width=window.innerWidth,height=window.innerHeight;const portrait=width<700&&height>width;const displayHeight=portrait?Math.max(width*730/1280,Math.min(height,520)):height;viewport.style.width=width+'px';viewport.style.height=displayHeight+'px';stage.style.transform=`scale(${width/1280},${displayHeight/730})`;document.body.classList.toggle('portrait',portrait);}
 window.addEventListener('resize',fit);fit();
 function pos(x,y,w,h){return `left:${x}px;top:${y}px;${w?`width:${w}px;`:''}${h?`height:${h}px;`:''}`;}
 function text(value,x,y,w,cls='text',extra=''){return `<div class="${cls}" style="${pos(x,y,w)}${extra}">${escape(value)}</div>`;}

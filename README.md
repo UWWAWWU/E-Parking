@@ -20,7 +20,7 @@ A parking management application built with Python and Tkinter, now available in
 
 E-Parking helps users choose a parking space, locate their vehicle, and calculate parking fees. The original desktop application uses Tkinter for its GUI, Pillow for image assets, and pandas for CSV records. Bubble sort and binary search support account lookup in the Python implementation.
 
-The browser version adapts the original desktop interface for web use. Backgrounds, banners, navigation artwork, and action buttons come directly from the repository's **Gambar** folder. The original 1280 × 730 layout, purple and yellow palette, labels, slot positions, and page flows are retained. The complete canvas scales to smaller screens without rearranging the desktop design.
+The browser version adapts the original desktop interface for web use. Backgrounds, banners, navigation artwork, and action buttons come directly from the repository's **Gambar** folder. The original 1280 × 730 layout, purple and yellow palette, labels, slot positions, and page flows are retained. The interface fills the browser viewport and adapts the original layout to the screen size while preserving the original artwork.
 
 ## Features
 
