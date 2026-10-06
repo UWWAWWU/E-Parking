@@ -26,3 +26,22 @@ html,body{width:100%;height:100%;overflow:hidden}#viewport{margin:0;width:100vw;
 /* Preserve the original vertical entrance and cleanly cover embedded floor signs. */
 .map-enter{background:#00ef00;color:#101510;writing-mode:vertical-rl;text-orientation:upright;letter-spacing:2px;font-size:14px;font-weight:600}.map-top-cover{background:url('Gambar/start park3 bg.jpg') -804px -327px/1280px 730px no-repeat}.map-floor-cover{background:#2c2e43}.notification{left:50%;top:50%;transform:translate(-50%,-50%)}.page-parking .main-content,.page-find .main-content{height:604px}.page-parking .original-content,.page-find .original-content{transform:scale(1.5166,1.07);transform-origin:306px 110px}
 .main-content{overflow:clip}
+
+/* App notices follow the center of the main panel and sit above its banner. */
+.app-stage .notification{left:770px;top:86px;transform:translate(-50%,-100%)}
+.auth-stage .notification{left:640px;top:85px;transform:translateX(-50%)}
+.map-connection{display:flex;align-items:center;justify-content:center;color:#101510;font-size:14px;font-weight:600;background:#00ef00}
+.map-connection-left span{white-space:nowrap;transform:rotate(-90deg)}
+.map-connection-right{background:#ed1020}
+.map-connection-right span{transform:scaleX(.6594)}
+.invoice-dialog{width:460px;padding:24px 28px;background:#2c2e43;border:1px solid #6a6d81;border-radius:16px;box-shadow:0 18px 70px #0007;color:#ececf2}
+.invoice-dialog header{border-bottom:1px solid #56596d;padding-bottom:16px}
+.invoice-dialog header>span{color:#ffc800;font-size:13px;font-weight:700;letter-spacing:2px}
+.invoice-dialog h2{font-size:28px;margin:8px 0 4px;color:#fff}
+.invoice-dialog header p{margin:0 0 12px;font-size:12px;color:#aeb1c3}
+.invoice-dialog header strong{font-size:12px;color:#9ee4b7}
+.invoice-dialog dl{display:grid;grid-template-columns:135px 1fr;gap:12px 16px;margin:20px 0;font-size:14px;line-height:1.4}
+.invoice-dialog dt{color:#aeb1c3}.invoice-dialog dd{margin:0;overflow-wrap:anywhere}
+.invoice-total{display:flex;justify-content:space-between;border-top:1px solid #56596d;padding-top:18px;font-size:20px}.invoice-total strong{color:#ffc800}
+.invoice-note{font-size:12px;color:#aeb1c3;margin:14px 0 20px}
+.invoice-actions{display:flex;gap:12px}.invoice-actions button{padding:11px 16px;border-radius:7px;font-size:14px;background:#42465b;color:#fff;border:1px solid #777b90}.invoice-actions button:last-child{flex:1;background:#ffc800;color:#24273a;border-color:#ffc800;font-weight:700}.invoice-actions button:hover{filter:brightness(1.12)}
