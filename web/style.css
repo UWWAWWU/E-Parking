@@ -62,7 +62,6 @@ html,body{width:100%;height:100%;overflow:hidden}#viewport{margin:0;width:100vw;
 .banner-legend{left:238px;top:154px;display:flex;gap:26px;font-size:10px;line-height:14px;color:#24273a}.banner-legend span{display:flex;align-items:center;gap:4px}.banner-legend span:first-child{color:#d9ad00}.banner-legend i{display:block;width:14px;height:14px;background:#ffc800}.banner-legend span:last-child i{background:#4a495b}
 .banner-find-copy{left:88px;top:25px;display:flex;flex-direction:column;align-items:center;transform:rotate(-4deg)}.banner-find-copy span{font-family:Georgia,serif;font-size:22px;font-style:italic;color:#152e35}.banner-find-copy strong{font-family:Impact,'Arial Narrow',sans-serif;font-size:44px;font-weight:900;color:#ffd324;font-style:italic;line-height:1.2}
 .banner-payment-title{left:140px;top:25px;width:417px;height:51px;background:#e5ff00;color:#000;font-size:24px;font-weight:900;display:flex;align-items:center;justify-content:center;letter-spacing:.4px}
-.banner-payment-page{left:438px;top:65px;width:121px;height:50px;background:#fff;color:#000;font-size:29px;font-weight:900;display:flex;align-items:center;justify-content:center}
 .banner-payment-copy{right:61px;top:123px;text-align:center;display:flex;flex-direction:column;gap:3px}.banner-payment-copy strong{font-size:20px;font-weight:500;color:#e5ff00}.banner-payment-copy span{font-size:8px;font-weight:700;color:#fff}
 .map-surface,.billing-panel{background:#2c2e43;border-radius:18px}.map-lines{pointer-events:none;overflow:visible}
 .map-connection,.map-connection-right{background:#fff;color:#101510}.map-exit{display:flex;align-items:center;justify-content:center;background:#ed1020;color:#101510;font-size:14px;font-weight:600}.map-exit span{transform:scaleX(.6594)}
@@ -77,3 +76,5 @@ html,body{width:100%;height:100%;overflow:hidden}#viewport{margin:0;width:100vw;
 .notification{z-index:50}.invoice-actions button:disabled{opacity:.6;cursor:wait}
 @font-face{font-family:ParkingDisplay;src:url('assets/fonts/display.woff') format('woff');font-style:normal;font-weight:400;font-display:swap}
 .brand strong,.banner-home-copy strong,.banner-find-copy strong{font-family:ParkingDisplay,Impact,'Arial Narrow',sans-serif;font-weight:400}.banner-home-copy strong{font-size:34px}.banner-find-copy strong{font-size:44px}
+
+.page-payment .main-content{height:604px}
