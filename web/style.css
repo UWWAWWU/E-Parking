@@ -22,3 +22,7 @@ html,body{width:100%;height:100%;overflow:hidden}#viewport{margin:0;width:100vw;
 .plate-dialog .plate-actions{margin-top:24px!important}
 
 .map-enter{background:#00ef00;color:#101510;writing-mode:horizontal-tb;text-orientation:mixed;letter-spacing:0;font-size:14px;font-weight:600}
+
+/* Preserve the original vertical entrance and cleanly cover embedded floor signs. */
+.map-enter{background:#00ef00;color:#101510;writing-mode:vertical-rl;text-orientation:upright;letter-spacing:2px;font-size:14px;font-weight:600}.map-top-cover{background:url('Gambar/start park3 bg.jpg') -804px -327px/1280px 730px no-repeat}.map-floor-cover{background:#2c2e43}.notification{left:50%;top:50%;transform:translate(-50%,-50%)}.page-parking .main-content,.page-find .main-content{height:604px}.page-parking .original-content,.page-find .original-content{transform:scale(1.5166,1.07);transform-origin:306px 110px}
+.main-content{overflow:clip}
